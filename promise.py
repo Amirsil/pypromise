@@ -11,7 +11,7 @@ class Promise:
     thread: threading.Thread
     resolver: Callable = None
     rejecter: Callable = None
-    finish_callback = None
+    finish_callback: Callable = None
     
     def then(self, action: Callable[[Any], None]):
         self.resolver = action
