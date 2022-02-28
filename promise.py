@@ -58,9 +58,9 @@ class Promise:
     
     def next_promise_function(self, resolve, reject):
         def post_catch_hook(result, error):
-                if error:
-                    reject(error)
-                resolve(result)
+            if error:
+                reject(error)
+            resolve(result)
                     
         self.finish_callback = post_catch_hook
 
